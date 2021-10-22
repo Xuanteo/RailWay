@@ -37,7 +37,10 @@ public class Exercise1_FlowControl {
 				LocalDate.now(), groupAcc2);
 		Account account3 = new Account(3, "email3@gmai.com", "email3", "fullname3", department1, position1,
 				LocalDate.now(), groupAcc3);
-
+		Account account4 = new Account(4, "email4@gmai.com", "email4", "fullname4", department2, position1,
+				LocalDate.now(), groupAcc3);
+		Account account5 = new Account(5, "email5@gmai.com", "email5", "fullname5", department3, position1,
+				LocalDate.now(), groupAcc3);
 		// add account to group
 		group1.accounts = new Account[] { account1, account2 };
 		group2.accounts = new Account[] { account2, account3 };
@@ -156,11 +159,11 @@ public class Exercise1_FlowControl {
 				break;
 			}
 		}
-		
+
 //		Question 7:
 //			Sử dụng switch case để làm lại Question 4
 		System.out.println("question7:--------Check Account 1 sử dụng toán tử ternary để check position---------");
-		
+
 		switch (account1.position.positionName.toString()) {
 		case "Dev":
 			System.out.println("Đây là Developer");
@@ -169,29 +172,30 @@ public class Exercise1_FlowControl {
 			System.out.println("Người này không phải là Developer");
 			break;
 		}
-		
+
 //		FOREACH
 //		Question 8:
 //		In ra thông tin các account bao gồm: Email, FullName và tên phòng ban của
 //		họ
-		
-		Account[] arrAcc = {account1, account2, account3};
+		System.out.println("question8:--------In ra thông tin các account---------");
+		Account[] arrAcc = { account1, account2, account3 };
 		for (Account account : arrAcc) {
 			System.out.println("Thông tin Account: " + account.fullName);
 			System.out.println("Email: " + account.email);
 			System.out.println("FullName: " + account.fullName);
 			System.out.println("Tên Phòng ban: " + account.department.departmentName);
 		}
-		
+
 //		Question 9:
 //			In ra thông tin các phòng ban bao gồm: id và name
-		Department[] depArr = {department1, department2, department3};
+		System.out.println("question9:--------In ra thông tin các phòng ban---------");
+		Department[] depArr = { department1, department2, department3 };
 		for (Department department : depArr) {
 			System.out.println("Thông tin phòng ban: " + department.departmentName);
 			System.out.println("ID Phòng ban: " + department.departmentID);
 			System.out.println("Tên Phòng ban: " + department.departmentName);
 		}
-		
+
 //		FOR
 //		Question 10:
 //		In ra thông tin các account bao gồm: Email, FullName và tên phòng ban của
@@ -204,15 +208,76 @@ public class Exercise1_FlowControl {
 //		Email: NguyenVanB@gmail.com
 //		Full name: Nguyễn Văn B
 //		Phòng ban: Marketting
-		
-		Account[] arrAcc1 = {account1, account2, account3};
+		System.out.println("question10:--------In ra thông tin các account---------");
+		Account[] arrAcc1 = { account1, account2, account3 };
 		for (int i = 0; i < arrAcc1.length; i++) {
-			System.out.println("Thông tin account thứ "+ (i+1) +" là: ");
+			System.out.println("Thông tin account thứ " + (i + 1) + " là: ");
 			System.out.println("Email: " + arrAcc1[i].email);
 			System.out.println("Full name: " + arrAcc1[i].fullName);
 			System.out.println("Phòng ban: " + arrAcc1[i].department.departmentName);
 		}
-		
+//		Question 11:
+//			In ra thông tin các phòng ban bao gồm: id và name theo định dạng sau:
+//			Thông tin department thứ 1 là:
+//			Id: 1
+//			Name: Sale
+//			Thông tin department thứ 2 là:
+//			Id: 2
+//			Name: Marketing
+		System.out.println("question11:--------In ra thông tin các phòng ban---------");
+		Department[] depArr1 = { department1, department2, department3 };
+		for (int i = 0; i < depArr1.length; i++) {
+			System.out.println("Thông tin deparment thứ " + (i + 1) + " là: ");
+			System.out.println("ID: " + depArr1[i].departmentID);
+			System.out.println("Name: " + depArr1[i].departmentName);
+
+		}
+
+//		Question 12:
+//			Chỉ in ra thông tin 2 department đầu tiên theo định dạng như Question 10
+		System.out.println("question12:--------Chỉ in ra thông tin 2 department đầu tiên---------");
+		Department[] depArr2 = { department1, department2, department3 };
+		for (int i = 0; i < 2; i++) {
+			System.out.println("Thông tin deparment thứ " + (i + 1) + " là: ");
+			System.out.println("ID: " + depArr2[i].departmentID);
+			System.out.println("Name: " + depArr2[i].departmentName);
+		}
+//		Question 13:
+//			In ra thông tin tất cả các account ngoại trừ account thứ 2
+		System.out.println("question13:--------In ra thông tin tất cả các account ngoại trừ account thứ 2---------");
+		Account[] arrAcc2 = { account1, account2, account3 };
+		for (int i = 0; i < arrAcc1.length; i++) {
+			if (i != 1) {
+				System.out.println("Thông tin account thứ " + (i + 1) + " là: ");
+				System.out.println("Email: " + arrAcc2[i].email);
+				System.out.println("Full name: " + arrAcc2[i].fullName);
+				System.out.println("Phòng ban: " + arrAcc2[i].department.departmentName);
+			}
+
+		}
+//		Question 14:
+//			In ra thông tin tất cả các account có id < 4
+		System.out.println("question14:--------In ra thông tin tất cả các account có id < 4---------");
+		Account[] arrAcc3 = { account1, account2, account3, account4, account5 };
+		for (int i = 0; i < arrAcc1.length; i++) {
+			if (i < 3) {
+				System.out.println("Thông tin account thứ " + (i + 1) + " là: ");
+				System.out.println("Email: " + arrAcc3[i].email);
+				System.out.println("Full name: " + arrAcc3[i].fullName);
+				System.out.println("Phòng ban: " + arrAcc3[i].department.departmentName);
+			}
+
+		}
+//		Question 15:
+//			In ra các số chẵn nhỏ hơn hoặc bằng 20
+		System.out.println("question14:--------In ra các số chẵn nhỏ hơn hoặc bằng 20---------");
+		for (int i = 0; i <= 20; i++) {
+			if (i % 2 == 0) {
+				System.out.println(i + " ");
+			}
+
+		}
+
 	}
 
 }
