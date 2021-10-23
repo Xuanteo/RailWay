@@ -260,7 +260,7 @@ public class Exercise1_FlowControl {
 		System.out.println("question14:--------In ra thông tin tất cả các account có id < 4---------");
 		Account[] arrAcc3 = { account1, account2, account3, account4, account5 };
 		for (int i = 0; i < arrAcc1.length; i++) {
-			if (i < 3) {
+			if (arrAcc3[i].accountID < 4) {
 				System.out.println("Thông tin account thứ " + (i + 1) + " là: ");
 				System.out.println("Email: " + arrAcc3[i].email);
 				System.out.println("Full name: " + arrAcc3[i].fullName);
@@ -270,13 +270,208 @@ public class Exercise1_FlowControl {
 		}
 //		Question 15:
 //			In ra các số chẵn nhỏ hơn hoặc bằng 20
-		System.out.println("question14:--------In ra các số chẵn nhỏ hơn hoặc bằng 20---------");
+		System.out.println("question15:--------In ra các số chẵn nhỏ hơn hoặc bằng 20---------");
 		for (int i = 0; i <= 20; i++) {
 			if (i % 2 == 0) {
 				System.out.println(i + " ");
 			}
 
 		}
+
+//		WHILE
+//		Question 16:
+//		Làm lại các Question ở phần FOR bằng cách sử dụng WHILE kết hợp với
+//		lệnh break, continue
+
+//		Question 16-10: cách sử dụng WHILE
+//		In ra thông tin các account bao gồm: Email, FullName và tên phòng ban của
+//		họ theo định dạng như sau:
+//		Thông tin account thứ 1 là:
+//		Email: NguyenVanA@gmail.com
+//		Full name: Nguyễn Văn A
+//		Phòng ban: Sale
+//		Thông tin account thứ 2 là:
+//		Email: NguyenVanB@gmail.com
+//		Full name: Nguyễn Văn B
+//		Phòng ban: Marketting
+		System.out.println("question 16-10:--------In ra thông tin các account---------");
+		Account[] arrAcc4 = { account1, account2, account3 };
+		int i = 0;
+		while (i < arrAcc4.length) {
+			System.out.println("Thông tin account thứ " + (i + 1) + " là: ");
+			System.out.println("Email: " + arrAcc1[i].email);
+			System.out.println("Full name: " + arrAcc1[i].fullName);
+			System.out.println("Phòng ban: " + arrAcc1[i].department.departmentName);
+			i++;
+		}
+
+//		Question 16-11:
+//		In ra thông tin các phòng ban bao gồm: id và name theo định dạng sau:
+//		Thông tin department thứ 1 là:
+//		Id: 1
+//		Name: Sale
+//		Thông tin department thứ 2 là:
+//		Id: 2
+//		Name: Marketing
+		System.out.println("question 16-11:--------In ra thông tin các phòng ban---------");
+		Department[] depArr3 = { department1, department2, department3 };
+		int i1 = 0;
+		while (i1 < depArr3.length) {
+			System.out.println("Thông tin deparment thứ " + (i1 + 1) + " là: ");
+			System.out.println("ID: " + depArr1[i1].departmentID);
+			System.out.println("Name: " + depArr1[i1].departmentName);
+			i1++;
+		}
+//		Question 16-12:
+//		Chỉ in ra thông tin 2 department đầu tiên theo định dạng như Question 10
+		System.out.println("question 16-12:--------Chỉ in ra thông tin 2 department đầu tiên---------");
+		Department[] depArr4 = { department1, department2, department3 };
+		int i2 = 0;
+		while (i2 < 2) {
+			System.out.println("Thông tin deparment thứ " + (i2 + 1) + " là: ");
+			System.out.println("ID: " + depArr4[i2].departmentID);
+			System.out.println("Name: " + depArr4[i2].departmentName);
+			i2++;
+		}
+//		Question 13:
+//		In ra thông tin tất cả các account ngoại trừ account thứ 2
+		System.out
+				.println("question 16-13:--------In ra thông tin tất cả các account ngoại trừ account thứ 2---------");
+		Account[] arrAcc5 = { account1, account2, account3 };
+		int i3 = 0;
+		while (i3 < arrAcc5.length) {
+			if (i3 != 1) {
+				System.out.println("Thông tin account thứ " + (i3 + 1) + " là: ");
+				System.out.println("Email: " + arrAcc5[i3].email);
+				System.out.println("Full name: " + arrAcc5[i3].fullName);
+				System.out.println("Phòng ban: " + arrAcc5[i3].department.departmentName);
+			}
+			i3++;
+		}
+//		Question 16-14:
+//		In ra thông tin tất cả các account có id < 4
+		System.out.println("question 16-14:--------In ra thông tin tất cả các account có id < 4---------");
+		Account[] arrAcc6 = { account1, account2, account3, account4, account5 };
+		int i4 = 0;
+		while (i4 < arrAcc6.length) {
+			if (arrAcc3[i4].accountID < 4) {
+				System.out.println("Thông tin account thứ " + (i4 + 1) + " là: ");
+				System.out.println("Email: " + arrAcc6[i4].email);
+				System.out.println("Full name: " + arrAcc6[i4].fullName);
+				System.out.println("Phòng ban: " + arrAcc6[i4].department.departmentName);
+			}
+			i4++;
+		}
+
+//	Question 16-15:
+//		In ra các số chẵn nhỏ hơn hoặc bằng 20
+		System.out.println("question 16-15:--------In ra các số chẵn nhỏ hơn hoặc bằng 20---------");
+		int i5 = 0;
+		while (i5 <= 20) {
+			if (i5 % 2 == 0) {
+				System.out.println(i5 + " ");
+			}
+			i5++;
+		}
+
+//		DO-WHILE
+//		Question 17:
+//		Làm lại các Question ở phần FOR bằng cách sử dụng DO-WHILE kết hợp với
+//		lệnh break, continue
+
+//		Question 17-10: cách sử dụng WHILE
+//		In ra thông tin các account bao gồm: Email, FullName và tên phòng ban của
+//		họ theo định dạng như sau:
+//		Thông tin account thứ 1 là:
+//		Email: NguyenVanA@gmail.com
+//		Full name: Nguyễn Văn A
+//		Phòng ban: Sale
+//		Thông tin account thứ 2 là:
+//		Email: NguyenVanB@gmail.com
+//		Full name: Nguyễn Văn B
+//		Phòng ban: Marketting
+		System.out.println("question 17-10:--------In ra thông tin các account---------");
+		Account[] arrAccou = { account1, account2, account3 };
+		int j = 0;
+		do {
+			System.out.println("Thông tin account thứ " + (j + 1) + " là: ");
+			System.out.println("Email: " + arrAccou[j].email);
+			System.out.println("Full name: " + arrAccou[j].fullName);
+			System.out.println("Phòng ban: " + arrAccou[j].department.departmentName);
+			j++;
+		} while (j < arrAccou.length);
+
+//		Question 17-11:
+//		In ra thông tin các phòng ban bao gồm: id và name theo định dạng sau:
+//		Thông tin department thứ 1 là:
+//		Id: 1
+//		Name: Sale
+//		Thông tin department thứ 2 là:
+//		Id: 2
+//		Name: Marketing
+		System.out.println("question 17-11:--------In ra thông tin các phòng ban---------");
+		Department[] departArr = { department1, department2, department3 };
+		int j2 = 0;
+		do {
+			System.out.println("Thông tin deparment thứ " + (j2 + 1) + " là: ");
+			System.out.println("ID: " + departArr[j2].departmentID);
+			System.out.println("Name: " + departArr[j2].departmentName);
+			j2++;
+		} while (j2 < departArr.length);
+
+//		Question 16-12:
+//		Chỉ in ra thông tin 2 department đầu tiên theo định dạng như Question 10
+		System.out.println("question 17-12:--------Chỉ in ra thông tin 2 department đầu tiên---------");
+		Department[] departArr1 = { department1, department2, department3 };
+		int j3 = 0;
+		do {
+			System.out.println("Thông tin deparment thứ " + (j3 + 1) + " là: ");
+			System.out.println("ID: " + departArr1[j3].departmentID);
+			System.out.println("Name: " + departArr1[j3].departmentName);
+			j3++;
+		} while (j3 < 2);
+
+//		Question 13:
+//		In ra thông tin tất cả các account ngoại trừ account thứ 2
+		System.out
+				.println("question 17-13:--------In ra thông tin tất cả các account ngoại trừ account thứ 2---------");
+		Account[] arrAccou1 = { account1, account2, account3 };
+		int j4 = 0;
+		do {
+			if (j4 != 1) {
+				System.out.println("Thông tin account thứ " + (j4 + 1) + " là: ");
+				System.out.println("Email: " + arrAccou1[j4].email);
+				System.out.println("Full name: " + arrAccou1[j4].fullName);
+				System.out.println("Phòng ban: " + arrAccou1[j4].department.departmentName);
+			}
+			j4++;
+		} while (j4 < arrAccou1.length);
+
+//		Question 17-14:
+//		In ra thông tin tất cả các account có id < 4
+		System.out.println("question 17-14:--------In ra thông tin tất cả các account có id < 4---------");
+		Account[] arrAccou2 = { account1, account2, account3, account4, account5 };
+		int j5 = 0;
+		do {
+			if (arrAccou2[j5].accountID < 4) {
+				System.out.println("Thông tin account thứ " + (j5 + 1) + " là: ");
+				System.out.println("Email: " + arrAccou2[j5].email);
+				System.out.println("Full name: " + arrAccou2[j5].fullName);
+				System.out.println("Phòng ban: " + arrAccou2[j5].department.departmentName);
+			}
+			j5++;
+		} while (j5 < arrAccou2.length);
+
+//	Question 17-15:
+//		In ra các số chẵn nhỏ hơn hoặc bằng 20
+		System.out.println("question 17-15:--------In ra các số chẵn nhỏ hơn hoặc bằng 20---------");
+		int j6 = 0;
+		do {
+			if (j6 % 2 == 0) {
+				System.out.println(j6 + " ");
+			}
+			j6++;
+		} while (j6 <= 20);
 
 	}
 
