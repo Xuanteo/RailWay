@@ -1,7 +1,7 @@
 package entity;
 
+import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Date;
 
 /**
  * Table 10: Exam ExamID: định danh của đề thi (auto increment) Code: mã đề thi
@@ -25,7 +25,7 @@ public class Exam {
 
 	public Account creatorID;
 
-	public Date createDate;
+	public LocalDate  createDate;
 
 	public Question[] questions;
 
@@ -34,7 +34,7 @@ public class Exam {
 	}
 
 	public Exam(int examID, String code, String title, CategoryQuestion[] categoryQuestion, int duration,
-			Account creatorID, Date createDate, Question[] questions) {
+			Account creatorID, LocalDate createDate, Question[] questions) {
 		super();
 		this.examID = examID;
 		this.code = code;
