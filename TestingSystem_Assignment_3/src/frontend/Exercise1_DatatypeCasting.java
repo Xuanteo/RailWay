@@ -1,6 +1,5 @@
 package frontend;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Exercise1_DatatypeCasting {
@@ -34,8 +33,22 @@ public class Exercise1_DatatypeCasting {
 
 //	Question 4:
 //		Viết 1 method nhập vào 2 số nguyên a và b và trả về thương của chúng
+	@SuppressWarnings("resource")
 	private static void question4() {
-		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào số nguyên a:");
+		int a = sc.nextInt();
+		System.out.println("Nhập vào số nguyên b:");
+		int b;
+		do {
+			b = sc.nextInt();
+			if (b == 0) {
+				System.out.println("Nhập vào số khác 0");
+			}
+		} while (b == 0);
+		
+		float c = (float)a / (float)b;
+		System.out.println("Thương của 2 số là: " + c);
 
 	}
 
@@ -45,7 +58,18 @@ public class Exercise1_DatatypeCasting {
 //		Cách 1: convert số có 5 chữ số ra String, sau đó lấy 2 số cuối
 //		Cách 2: chia lấy dư số đó cho 100
 	private static void question3() {
-		// TODO Auto-generated method stub
+		System.out.println("Lấy ngẫy nhiên 1 số có 5 chữ số: ");
+		int min = 0;
+		int max = 99999;
+		int a = (int) (Math.random() * max) + min;
+		if (a < 10000) {
+			a = a * 10;
+		}
+		System.out.println("Question 2");
+		System.out.println("Số ngẫu nhiên: " + a);
+		String b = String.valueOf(a);
+		System.out.println("Question 3: ");
+		System.out.println("2 số cuối của số có 5 chữ số: " + b.substring(3));
 
 	}
 
@@ -58,7 +82,7 @@ public class Exercise1_DatatypeCasting {
 		int max = 99999;
 		int a = (int) (Math.random() * max) + min;
 		if (a < 10000) {
-			a = a* 10;
+			a = a * 10;
 		}
 		System.out.println("Số ngẫu nhiên: " + a);
 	}
