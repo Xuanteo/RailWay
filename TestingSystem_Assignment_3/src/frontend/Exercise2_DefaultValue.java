@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import entity.Account;
 
-public class Exercise2_DefaunltValue {
+public class Exercise2_DefaultValue {
 	public static void main(String[] args) {
 //		Exercise 2 (Optional): Default value
 //		Question 1:

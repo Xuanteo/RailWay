@@ -10,7 +10,7 @@ public class Exercise1_DatatypeCasting {
 		System.out.println("Nhập vào số 1 để thực hiện Question1:");
 		System.out.println("Nhập vào số 2 để thực hiện Question2:");
 		System.out.println("Nhập vào số 3 để thực hiện Question3:");
-		System.out.println("Nhập vào số 4 để thực hiện Question3:");
+		System.out.println("Nhập vào số 4 để thực hiện Question4:");
 		int choose = sc.nextInt();
 		switch (choose) {
 		case 1:
