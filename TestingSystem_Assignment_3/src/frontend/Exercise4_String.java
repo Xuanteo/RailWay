@@ -67,8 +67,19 @@ public class Exercise4_String {
 //	Question 11 (Optional): Count special Character
 //	Tìm số lần xuất hiện ký tự "a" trong chuỗi
 	private static void question11() {
-		// TODO Auto-generated method stub
-
+		System.out.println("Tìm số lần kí tự xuất hiện trong chuỗi: ");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào chuỗi: ");
+		String str = sc.nextLine();
+		int count = 0;
+		// Dùng charAt trả về giá trị char của chuỗi:
+		for (int i = 0; i < str.length(); i++) {
+			if ('a' == str.charAt(i)) {
+				count++;
+			}
+		}
+		sc.close();
+		System.out.println("Số lần kí tự a xuất hiên trong chuỗi: " + count);
 	}
 
 //	Question 10 (Optional):
@@ -77,15 +88,30 @@ public class Exercise4_String {
 //		Ví dụ “word” và “drow” là 2 chuỗi đảo ngược nhau.
 	private static void question10() {
 		System.out.println("Kiểm tra 2 chuỗi có là đảo ngược của nhau không: ");
-
+		String s1, s2, reverseS1 = "";
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập chuỗi 1: ");
+		s1 = sc.nextLine();
+		System.out.println("Nhập chuỗi 2: ");
+		s2 = sc.nextLine();
+		for (int i = s1.length() - 1; i >= 0; i--) {
+			reverseS1 += s1.substring(i, i + 1);
+		}
+		System.out.println("Chuỗi đảo ngược: " + reverseS1);
+		if (s2.equals(reverseS1)) {
+			System.out.println("Đây là chuỗi đảo ngược");
+		} else {
+			System.out.println("Đây không phải chuỗi đảo ngược.");
+		}
+		sc.close();
 	}
 
 //	Question 9:
 //		In ra tất cả các group "Java"
 	private static void question9() {
 		System.out.println("In ra các group Java");
-		// Tạo ra 1 mảng 
-		String[] groupname = {"Java", "C++", "PHP", "Python"};
+		// Tạo ra 1 mảng
+		String[] groupname = { "Java", "C++", "PHP", "Python" };
 		for (String name : groupname) {
 			if (name.equals("Java")) {
 				System.out.println("Goup Java: " + name);
@@ -99,7 +125,7 @@ public class Exercise4_String {
 	private static void question8() {
 		System.out.println("In ra các group có chứa chữ Java: ");
 		// Khai báo 1 group:
-		String[] groupname = {"Group Java", "Java Web Fullstack", "Học lập trình Java", "Học Lập trình PHP"};
+		String[] groupname = { "Group Java", "Java Web Fullstack", "Học lập trình Java", "Học Lập trình PHP" };
 		for (String name : groupname) {
 			if (name.contains("Java")) {
 				System.out.println("Group có chứa chữ Java là: " + name);
