@@ -1,9 +1,6 @@
 package frontend;
 
-import java.time.LocalDate;
 import java.util.Scanner;
-
-import entity.Group;
 
 public class Exercise4_String {
 	public static void main(String[] args) {
@@ -22,11 +19,11 @@ public class Exercise4_String {
 		System.out.println("Nhập vào số 9 để thực hiện Question9:");
 		System.out.println("Nhập vào số 10 để thực hiện Question10:");
 		System.out.println("Nhập vào số 11 để thực hiện Question11:");
-		System.out.println("Nhập vào số 11 để thực hiện Question12:");
-		System.out.println("Nhập vào số 11 để thực hiện Question13:");
-		System.out.println("Nhập vào số 11 để thực hiện Question14:");
-		System.out.println("Nhập vào số 11 để thực hiện Question15:");
-		System.out.println("Nhập vào số 11 để thực hiện Question16:");
+		System.out.println("Nhập vào số 12 để thực hiện Question12:");
+		System.out.println("Nhập vào số 13 để thực hiện Question13:");
+		System.out.println("Nhập vào số 14 để thực hiện Question14:");
+		System.out.println("Nhập vào số 15 để thực hiện Question15:");
+		System.out.println("Nhập vào số 16 để thực hiện Question16:");
 		int choose = sc.nextInt();
 		switch (choose) {
 		case 1:
@@ -119,7 +116,28 @@ public class Exercise4_String {
 //"abc" => true
 //"1abc", "abc1", "123", "a1bc", null => false
 	private static void question13() {
+		System.out.println("Kiểm tra 1 chuỗi có chứa chữ số hay không: ");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào 1 chuỗi: ");
+		String str = sc.nextLine();
+		sc.close();
+		// check số theo từng kí tự sử dụng vòng lặp
+		for (int i = 0; i < str.length(); i++) {
+			if (checkKeynumber(str.charAt(i))) {
+				System.out.println("False");
+				return;
+			}
+		}
 
+		System.out.println("True");
+
+	}
+	// method kiểm tra kí tự có thuộc số:
+	private static boolean checkKeynumber(char charAt) {
+		if (charAt >= '0' && charAt <= '9') {
+			return true;
+		}
+		return false;
 	}
 
 //Question 12 (Optional): Reverse String
@@ -129,9 +147,9 @@ public class Exercise4_String {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Nhập vào 1 chuỗi: ");
 		String string = sc.nextLine();
-		String reverse ="";
-		for (int i = string.length() -1; i >= 0; i--) {
-			reverse += string.substring(i, i+1);
+		String reverse = "";
+		for (int i = string.length() - 1; i >= 0; i--) {
+			reverse += string.substring(i, i + 1);
 		}
 		sc.close();
 		System.out.println("Chuỗi đảo ngược: " + reverse);
