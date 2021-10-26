@@ -1,6 +1,9 @@
 package frontend;
 
+import java.time.LocalDate;
 import java.util.Scanner;
+
+import entity.Group;
 
 public class Exercise4_String {
 	public static void main(String[] args) {
@@ -73,21 +76,35 @@ public class Exercise4_String {
 //		Nếu có xuất ra “OK” ngược lại “KO”.
 //		Ví dụ “word” và “drow” là 2 chuỗi đảo ngược nhau.
 	private static void question10() {
-		// TODO Auto-generated method stub
+		System.out.println("Kiểm tra 2 chuỗi có là đảo ngược của nhau không: ");
 
 	}
 
 //	Question 9:
 //		In ra tất cả các group "Java"
 	private static void question9() {
-		// TODO Auto-generated method stub
+		System.out.println("In ra các group Java");
+		// Tạo ra 1 mảng 
+		String[] groupname = {"Java", "C++", "PHP", "Python"};
+		for (String name : groupname) {
+			if (name.equals("Java")) {
+				System.out.println("Goup Java: " + name);
+			}
+		}
 
 	}
 
 //	Question 8:
 //		In ra tất cả các group có chứa chữ "Java"
 	private static void question8() {
-		// TODO Auto-generated method stub
+		System.out.println("In ra các group có chứa chữ Java: ");
+		// Khai báo 1 group:
+		String[] groupname = {"Group Java", "Java Web Fullstack", "Học lập trình Java", "Học Lập trình PHP"};
+		for (String name : groupname) {
+			if (name.contains("Java")) {
+				System.out.println("Group có chứa chữ Java là: " + name);
+			}
+		}
 
 	}
 
