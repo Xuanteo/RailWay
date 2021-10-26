@@ -102,8 +102,24 @@ public class Exercise4_String {
 //		VD: Nếu người dùng nhập vào " nguyễn văn nam " thì sẽ
 //		chuẩn hóa thành "Nguyễn Văn Nam"
 	private static void question7() {
-		// TODO Auto-generated method stub
-
+		System.out.println("Nhập vào họ tên người dùng đầy đủ và chuẩn hoá tên của họ: ");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào họ tên của bạn: ");
+		String hoten = sc.nextLine().trim();
+		// trả về 1 chuỗi phù hợp với regex
+		hoten = hoten.replaceAll("\\s", " ");
+		System.out.println("test họ tên: " + hoten);
+		// Tạo 1 mảng chứa họ tên ngăn cách bởi các khoảng trắng.
+		String[] words = hoten.split(" ");
+		hoten = "";
+		for (String word : words) {
+			String firstCharacter = word.substring(0, 1).toUpperCase();
+			String leftCharacter = word.substring(1);
+			word = firstCharacter + leftCharacter;
+			hoten += word + " ";
+		}
+		System.out.println("Tên người dùng nhập vào: " + hoten);
+		sc.close();
 	}
 
 //	Question 6:
@@ -116,7 +132,27 @@ public class Exercise4_String {
 //		"Tên đệm là: Văn"
 //		"Tên là: Nam"
 	private static void question6() {
-		// TODO Auto-generated method stub
+		System.out.println("Nhập vào họ tên đầy đủ của người dùng sau đó in tách họ tên và tên đệm ra: ");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào họ tên: ");
+		String hoten = sc.nextLine();
+		// Cắt những khoảng trắng ở đầu chuỗi và cuối chuỗi
+		hoten = hoten.trim();
+		// tạo 1 mảng chứa họ tên ngăn cách bằng khoảng trắng:
+		String[] word = hoten.split(" ");
+		// tên là từ cuối cùng
+		String ten = word[word.length - 1];
+		// Họ là từ đầu tiên:
+		String ho = word[0];
+		// tên đệm
+		String tendem = "";
+		for (int i = 0; i < word.length - 2; i++) {
+			tendem += word[i] + " ";
+		}
+		System.out.println("Họ là: " + ho);
+		System.out.println("Tên đệm là: " + tendem);
+		System.out.println("Tên là: " + ten);
+		sc.close();
 
 	}
 
@@ -124,7 +160,14 @@ public class Exercise4_String {
 //		Viết chương trình để người dùng nhập vào họ, sau đó yêu cầu người
 //		dùng nhập vào tên và hệ thống sẽ in ra họ và tên đầy đủ
 	private static void question5() {
-		// TODO Auto-generated method stub
+		System.out.println("Người dùng nhập vào họ sau đó yêu cầu người dùng nhập vào tên và in ra họ tên: ");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào Họ: ");
+		String ho = sc.nextLine();
+		System.out.println("Hãy nhập vào tên của bạn: ");
+		String ten = sc.nextLine();
+		System.out.println("Họ tên người dùng nhập vào là: " + ho + " " + ten);
+		sc.close();
 
 	}
 
@@ -143,7 +186,7 @@ public class Exercise4_String {
 		String name = sc.nextLine();
 		name = name.toUpperCase();
 		for (int i = 0; i < name.length(); i++) {
-			System.out.println("Ký tự thứ " + (i+1) + " là: " + name.charAt(i));
+			System.out.println("Ký tự thứ " + (i + 1) + " là: " + name.charAt(i));
 		}
 		sc.close();
 
