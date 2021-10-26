@@ -22,6 +22,11 @@ public class Exercise4_String {
 		System.out.println("Nhập vào số 9 để thực hiện Question9:");
 		System.out.println("Nhập vào số 10 để thực hiện Question10:");
 		System.out.println("Nhập vào số 11 để thực hiện Question11:");
+		System.out.println("Nhập vào số 11 để thực hiện Question12:");
+		System.out.println("Nhập vào số 11 để thực hiện Question13:");
+		System.out.println("Nhập vào số 11 để thực hiện Question14:");
+		System.out.println("Nhập vào số 11 để thực hiện Question15:");
+		System.out.println("Nhập vào số 11 để thực hiện Question16:");
 		int choose = sc.nextInt();
 		switch (choose) {
 		case 1:
@@ -57,6 +62,21 @@ public class Exercise4_String {
 		case 11:
 			question11();
 			break;
+		case 12:
+			question12();
+			break;
+		case 13:
+			question13();
+			break;
+		case 14:
+			question14();
+			break;
+		case 15:
+			question15();
+			break;
+		case 16:
+			question16();
+			break;
 
 		default:
 			break;
@@ -64,7 +84,60 @@ public class Exercise4_String {
 
 	}
 
-//	Question 11 (Optional): Count special Character
+//	Question 16 (Optional):4
+//	Cho một chuỗi str và số nguyên n >= 0. Chia chuỗi str ra làm các phần
+//	bằng nhau với n ký tự. Nếu chuỗi không chia được thì xuất ra màn
+//	hình “KO”.
+	private static void question16() {
+
+	}
+
+//Question 15 (Optional): Revert string by word
+//Đảo ngược các ký tự của chuỗi cách nhau bởi dấu cách mà không dùng
+//thư viện.
+//Ví dụ: " I am developer " => "developer am I".
+//Các ký tự bên trong chỉ cách nhau đúng một dấu khoảng cách.
+//Gợi ý: Các bạn cần loại bỏ dấu cách ở đầu và cuối câu, thao tác cắt
+//chuỗi theo dấu cách
+	private static void question15() {
+
+	}
+
+//Question 14 (Optional): Replace character
+//Cho một chuỗi str, chuyển các ký tự được chỉ định sang một ký tự khác
+//cho trước.
+//Ví dụ:
+//"VTI Academy" chuyển ký tự 'e' sang '*' kết quả " VTI Acad*my"
+	private static void question14() {
+
+	}
+
+//Question 13 (Optional): String not contains digit
+//Kiểm tra một chuỗi có chứa chữ số hay không, nếu có in ra false ngược
+//lại true.
+//Ví dụ:
+//"abc" => true
+//"1abc", "abc1", "123", "a1bc", null => false
+	private static void question13() {
+
+	}
+
+//Question 12 (Optional): Reverse String
+//Đảo ngược chuỗi sử dụng vòng lặp
+	private static void question12() {
+		System.out.println("Đảo ngược chuỗi sử dụng vòng lặp: ");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào 1 chuỗi: ");
+		String string = sc.nextLine();
+		String reverse ="";
+		for (int i = string.length() -1; i >= 0; i--) {
+			reverse += string.substring(i, i+1);
+		}
+		sc.close();
+		System.out.println("Chuỗi đảo ngược: " + reverse);
+	}
+
+// Question 11 (Optional): Count special Character
 //	Tìm số lần xuất hiện ký tự "a" trong chuỗi
 	private static void question11() {
 		System.out.println("Tìm số lần kí tự xuất hiện trong chuỗi: ");
@@ -72,7 +145,7 @@ public class Exercise4_String {
 		System.out.println("Nhập vào chuỗi: ");
 		String str = sc.nextLine();
 		int count = 0;
-		// Dùng charAt trả về giá trị char của chuỗi:
+		// Dùng charAt trả về giá trị char của chuỗi: và đếm số kí tự a sau mỗi vòng lặp
 		for (int i = 0; i < str.length(); i++) {
 			if ('a' == str.charAt(i)) {
 				count++;
