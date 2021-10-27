@@ -91,7 +91,30 @@ public class Exercise5_ObjectMethod {
 //	Question 2:
 //		In ra thông tin của tất cả phòng ban (sử dụng toString())
 	private static void question2() {
-		// TODO Auto-generated method stub
+		Department[] departments = new Department[5];
+		Department department1 = new Department();
+		department1.departmentID = 1;
+		department1.departmentName = "Sale";
+		Department department2 = new Department();
+		department2.departmentID = 2;
+		department2.departmentName = "Marketing";
+		Department department3 = new Department();
+		department3.departmentID = 3;
+		department3.departmentName = "Boss of director";
+		Department department4 = new Department();
+		department4.departmentID = 4;
+		department4.departmentName = "Waiting room";
+		Department department5 = new Department();
+		department5.departmentID = 5;
+		department5.departmentName = "Accounting";
+		departments[0] = department1;
+		departments[1] = department2;
+		departments[2] = department3;
+		departments[3] = department4;
+		departments[4] = department5;
+		for (int i = 0; i < departments.length; i++) {
+			System.out.println("Thông tin phòng ban thứ " +(i+1)+ " là: " + departments[i].toString());
+		}
 
 	}
 //	Question 1:
