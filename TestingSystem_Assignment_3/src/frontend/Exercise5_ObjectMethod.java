@@ -85,7 +85,29 @@ public class Exercise5_ObjectMethod {
 //	Question 3:
 //		In ra địa chỉ của phòng ban thứ 1
 	private static void question3() {
-		// TODO Auto-generated method stub
+		Department[] departments = new Department[5];
+		Department department1 = new Department();
+		department1.departmentID = 1;
+		department1.departmentName = "Sale";
+		Department department2 = new Department();
+		department2.departmentID = 2;
+		department2.departmentName = "Marketing";
+		Department department3 = new Department();
+		department3.departmentID = 3;
+		department3.departmentName = "Boss of director";
+		Department department4 = new Department();
+		department4.departmentID = 4;
+		department4.departmentName = "Waiting room";
+		Department department5 = new Department();
+		department5.departmentID = 5;
+		department5.departmentName = "Accounting";
+		departments[0] = department1;
+		departments[1] = department2;
+		departments[2] = department3;
+		departments[3] = department4;
+		departments[4] = department5;
+		// In ra địa chỉ ô nhớ của phòng ban thứ nhất:
+		System.out.println("Địa chỉ ô nhớ của phòng ban thứ nhất là: " + department1.hashCode());
 
 	}
 //	Question 2:
