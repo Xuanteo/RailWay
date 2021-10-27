@@ -59,6 +59,7 @@ public class Exercise5_ObjectMethod {
 		// TODO Auto-generated method stub
 
 	}
+
 //	Question 6: Khởi tạo 1 array phòng ban gồm 5 phòng ban, sau đó in ra danh
 //	sách phòng ban theo thứ tự tăng dần theo tên (sắp xếp theo vần ABCD)
 //	VD:
@@ -71,17 +72,47 @@ public class Exercise5_ObjectMethod {
 		// TODO Auto-generated method stub
 
 	}
+
 //	Question 5: So sánh 2 phòng ban thứ 1 và phòng ban thứ 2 xem có bằng nhau
 //	không (bằng nhau khi tên của 2 phòng ban đó bằng nhau)
 	private static void question5() {
-		// TODO Auto-generated method stub
+		
+		System.out.println("So sánh 2 phòng ban có bằng nhau không(Bằng nhau khi tên phòng ban bằng nhau):");
 
 	}
+
 //	Question 4: Kiểm tra xem phòng ban thứ 1 có tên là "Phòng A" không?
 	private static void question4() {
-		// TODO Auto-generated method stub
+		Department[] departments = new Department[5];
+		Department department1 = new Department();
+		department1.departmentID = 1;
+		department1.departmentName = "Sale";
+		Department department2 = new Department();
+		department2.departmentID = 2;
+		department2.departmentName = "Marketing";
+		Department department3 = new Department();
+		department3.departmentID = 3;
+		department3.departmentName = "Boss of director";
+		Department department4 = new Department();
+		department4.departmentID = 4;
+		department4.departmentName = "Waiting room";
+		Department department5 = new Department();
+		department5.departmentID = 5;
+		department5.departmentName = "Accounting";
+		departments[0] = department1;
+		departments[1] = department2;
+		departments[2] = department3;
+		departments[3] = department4;
+		departments[4] = department5;
+		// Kiếm tra phòng ban 1 có tên phòng A hay không.
+		if (department1.departmentName.equals("Phòng A")) {
+			System.out.println("Có tên phòng A");
+		} else {
+			System.out.println("Không có tên phòng A");
+		}
 
 	}
+
 //	Question 3:
 //		In ra địa chỉ của phòng ban thứ 1
 	private static void question3() {
@@ -110,6 +141,7 @@ public class Exercise5_ObjectMethod {
 		System.out.println("Địa chỉ ô nhớ của phòng ban thứ nhất là: " + department1.hashCode());
 
 	}
+
 //	Question 2:
 //		In ra thông tin của tất cả phòng ban (sử dụng toString())
 	private static void question2() {
@@ -135,10 +167,11 @@ public class Exercise5_ObjectMethod {
 		departments[3] = department4;
 		departments[4] = department5;
 		for (int i = 0; i < departments.length; i++) {
-			System.out.println("Thông tin phòng ban thứ " +(i+1)+ " là: " + departments[i].toString());
+			System.out.println("Thông tin phòng ban thứ " + (i + 1) + " là: " + departments[i].toString());
 		}
 
 	}
+
 //	Question 1:
 //		In ra thông tin của phòng ban thứ 1 (sử dụng toString())
 	private static void question1() {

@@ -28,4 +28,15 @@ public class Department {
 		return "Department [departmentID=" + departmentID + ", departmentName=" + departmentName + "]";
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		Department department = (Department) obj;
+		if (departmentName.equals(department.departmentName)) {
+			return true;
+		}
+		return false;
+	}
 }
