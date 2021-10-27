@@ -97,6 +97,23 @@ public class Exercise4_String {
 //Gợi ý: Các bạn cần loại bỏ dấu cách ở đầu và cuối câu, thao tác cắt
 //chuỗi theo dấu cách
 	private static void question15() {
+		System.out.println("Đảo ngược kí tự của 1 chuỗi cách nhau bởi dấu cách: ");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào 1 chuỗi: ");
+		String str = sc.nextLine();
+		// Loại bỏ khoảng trắng đầu vào cuối
+		str = str.trim();
+		// Trả về 1 chuỗi mới phù hợp với regex, \s phù hợp với tất cả khoảng trắng.
+		str = str.replaceAll("\\s", " ");
+		// Khai báo ra 1 mảng:
+		String[] strArr = str.split(" ");
+		String reverse ="";
+		for (int i = strArr.length - 1; i >= 0; i--) {
+			reverse += strArr[i] + " ";
+
+		}
+		System.out.println("Chuỗi sau khi đảo ngược: "+ reverse);
+		sc.close();
 
 	}
 
@@ -119,7 +136,7 @@ public class Exercise4_String {
 		sc.close();
 		// Dùng vòng lặp xét để chuyển kí tự
 		for (int i = 0; i < str.length(); i++) {
-			if (str.charAt(i)==ch1) {
+			if (str.charAt(i) == ch1) {
 				str = str.replace(ch1, ch2);
 			}
 		}
@@ -149,6 +166,7 @@ public class Exercise4_String {
 		System.out.println("True");
 
 	}
+
 	// method kiểm tra kí tự có thuộc số:
 	private static boolean checkKeynumber(char charAt) {
 		if (charAt >= '0' && charAt <= '9') {
