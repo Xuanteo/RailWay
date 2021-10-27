@@ -106,7 +106,24 @@ public class Exercise4_String {
 //Ví dụ:
 //"VTI Academy" chuyển ký tự 'e' sang '*' kết quả " VTI Acad*my"
 	private static void question14() {
-
+		System.out.println("Chuyển ký tự của chuỗi sang 1 kí tự khác cho trước: ");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào 1 chuỗi: ");
+		String str = sc.nextLine();
+		char ch1, ch2;
+		System.out.println("Nhập kí tự muốn chuyển: ");
+		// chuyển 1 mảng String sang array char, lấy phần tử số 0:
+		ch1 = sc.nextLine().toCharArray()[0];
+		System.out.println("Kí tự mới sẽ chuyển: ");
+		ch2 = sc.nextLine().toCharArray()[0];
+		sc.close();
+		// Dùng vòng lặp xét để chuyển kí tự
+		for (int i = 0; i < str.length(); i++) {
+			if (str.charAt(i)==ch1) {
+				str = str.replace(ch1, ch2);
+			}
+		}
+		System.out.println("Chuỗi sau khi chuyển kí tự: " + str);
 	}
 
 //Question 13 (Optional): String not contains digit
