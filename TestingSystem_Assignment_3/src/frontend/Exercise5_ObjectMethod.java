@@ -76,8 +76,33 @@ public class Exercise5_ObjectMethod {
 //	Question 5: So sánh 2 phòng ban thứ 1 và phòng ban thứ 2 xem có bằng nhau
 //	không (bằng nhau khi tên của 2 phòng ban đó bằng nhau)
 	private static void question5() {
-		
-		System.out.println("So sánh 2 phòng ban có bằng nhau không(Bằng nhau khi tên phòng ban bằng nhau):");
+		Department[] departments = new Department[5];
+		Department department1 = new Department();
+		department1.departmentID = 1;
+		department1.departmentName = "Sale";
+		Department department2 = new Department();
+		department2.departmentID = 2;
+		department2.departmentName = "Marketing";
+		Department department3 = new Department();
+		department3.departmentID = 3;
+		department3.departmentName = "Boss of director";
+		Department department4 = new Department();
+		department4.departmentID = 4;
+		department4.departmentName = "Waiting room";
+		Department department5 = new Department();
+		department5.departmentID = 5;
+		department5.departmentName = "Accounting";
+		departments[0] = department1;
+		departments[1] = department2;
+		departments[2] = department3;
+		departments[3] = department4;
+		departments[4] = department5;
+		System.out.println("So sánh 2 phòng ban 1, 2 có bằng nhau không(Bằng nhau khi tên phòng ban bằng nhau):");
+		if (department1.equals(department2)) {
+			System.out.println("2 phòng ban bằng nhau");
+		} else {
+			System.out.println("2 phòng ban không bằng nhau");
+		}
 
 	}
 
