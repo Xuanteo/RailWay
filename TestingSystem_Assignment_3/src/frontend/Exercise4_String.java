@@ -86,7 +86,23 @@ public class Exercise4_String {
 //	bằng nhau với n ký tự. Nếu chuỗi không chia được thì xuất ra màn
 //	hình “KO”.
 	private static void question16() {
-
+		System.out.println("Nhập vào 1 chuỗi và số nguyên n>=0, chia chuỗi thành các phần bằng nhau với n kí tự: ");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào 1 chuỗi: ");
+		String str = sc.nextLine();
+		System.out.println("Nhập vào số nguyên >0: ");
+		int n = sc.nextInt();
+		sc.close();
+		// Kiểm tra chuỗi nếu không thoả mãn điều kiện
+		if (str == null || str.isEmpty() || str.length() % n != 0) {
+			System.out.println("KO");
+		}
+		// Sử dụng vòng lặp trả ra kết quả:
+		for (int i = 0; i < str.length(); i += n) {
+			// substring(int startIndex, int endIndex):Phương thức này trả về đối tượng
+			// chuỗi mới là chuỗi con của chuỗi đã cho tính startIndex đến endIndex đã nhập.
+			System.out.println(str.substring(i, i + n));
+		}
 	}
 
 //Question 15 (Optional): Revert string by word
@@ -107,12 +123,12 @@ public class Exercise4_String {
 		str = str.replaceAll("\\s", " ");
 		// Khai báo ra 1 mảng:
 		String[] strArr = str.split(" ");
-		String reverse ="";
+		String reverse = "";
 		for (int i = strArr.length - 1; i >= 0; i--) {
 			reverse += strArr[i] + " ";
 
 		}
-		System.out.println("Chuỗi sau khi đảo ngược: "+ reverse);
+		System.out.println("Chuỗi sau khi đảo ngược: " + reverse);
 		sc.close();
 
 	}
