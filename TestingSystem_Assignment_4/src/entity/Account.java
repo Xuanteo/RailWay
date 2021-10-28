@@ -106,14 +106,13 @@ public class Account {
 		this.fullName = fullName;
 	}
 
-	public Account(int accountID, String email, String username, String fullName, Department department,
-			Position position) {
+	public Account(int accountID, String email, String username, String fullName, Position position) {
 		super();
 		this.accountID = accountID;
 		this.email = email;
 		this.username = username;
 		this.fullName = fullName;
-		this.department = department;
+
 		this.position = position;
 		this.createDate = LocalDate.now();
 
