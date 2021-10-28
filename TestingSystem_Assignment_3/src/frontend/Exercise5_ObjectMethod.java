@@ -39,6 +39,9 @@ public class Exercise5_ObjectMethod {
 		case 7:
 			question7();
 			break;
+		case 8:
+			question8();
+			break;
 
 		default:
 			break;
@@ -47,7 +50,45 @@ public class Exercise5_ObjectMethod {
 
 	}
 
-//	Question 7: Khởi tạo 1 array học sinh gồm 5 Phòng ban, sau đó in ra danh
+//	Question 8: Khởi tạo 1 array học sinh gồm 5 học sinh, sau đó in ra danh sách học sinh được
+//	sắp xếp theo tên
+//	VD:
+//	Nguyễn Văn A
+//	Trần Hưng Đạo
+//	Trần Văn Nam
+//	Nguyễn Văn Toàn
+	private static void question8() {
+		String[] students = { "Nguyễn Văn A", "Nguyễn Văn Toàn", "Trần Văn Nam", "Trần Hưng Đạo" };
+		System.out.println("Danh sách học sinh sắp xếp theo tên");
+		for (int i = 0; i < students.length; i++) {
+			String reverseName = reverseWord1(students[i]);
+			for (int j = 0; j < students.length - 1; j++) {
+				String reverseCompareName = reverseWord1(students[j]);
+				if (reverseName.compareToIgnoreCase(reverseCompareName) < 0) {
+					// swap
+					String temp = students[i];
+					students[i] = students[j];
+					students[j] = temp;
+				}
+			}
+		}
+		for (String student : students) {
+			System.out.println(student);
+		}
+	}
+
+	private static String reverseWord1(String str) {
+		str = str.trim();
+		str = str.replaceAll("\\s", " ");
+		String[] words = str.split(" ");
+		str = "";
+		for (int i = words.length - 1; i >= 0; i--) {
+			str += words[i] + " ";
+		}
+		return str.substring(0, str.length() - 1);
+	}
+
+	// Question 7: Khởi tạo 1 array học sinh gồm 5 Phòng ban, sau đó in ra danh
 //	sách phòng ban được sắp xếp theo tên
 //	VD:
 //	Accounting
@@ -56,8 +97,58 @@ public class Exercise5_ObjectMethod {
 //	waiting room
 //	Sale
 	private static void question7() {
-		// TODO Auto-generated method stub
+		Department[] departments = new Department[5];
+		Department department1 = new Department();
+		department1.departmentID = 1;
+		department1.departmentName = "Sale";
+		Department department2 = new Department();
+		department2.departmentID = 2;
+		department2.departmentName = "Marketing";
+		Department department3 = new Department();
+		department3.departmentID = 3;
+		department3.departmentName = "Boss of director";
+		Department department4 = new Department();
+		department4.departmentID = 4;
+		department4.departmentName = "Waiting room";
+		Department department5 = new Department();
+		department5.departmentID = 5;
+		department5.departmentName = "Accounting";
+		departments[0] = department1;
+		departments[1] = department2;
+		departments[2] = department3;
+		departments[3] = department4;
+		departments[4] = department5;
+		System.out.println("Sắp xếp các phòng ban: ");
+		// sử dụng 2 vòng lặp:
+		// group by
+		for (int i = 0; i < departments.length; i++) {
+			// Đảo ngược chuỗi kí tự
+			String reverseDepartmentname = reverseWord(departments[i].departmentName);
+			for (int j = 0; j < departments.length - 1; j++) {
+				// đảo ngược chuỗi kí tự.
+				String reverseCompareDepartmentName = reverseWord(departments[j].departmentName);
+				if (reverseDepartmentname.compareToIgnoreCase(reverseCompareDepartmentName) < 0) {
+					// swap đổi chỗ:
+					Department temp = departments[i];
+					departments[i] = departments[j];
+					departments[j] = temp;
+				}
+			}
+		}
+		for (Department department : departments) {
+			System.out.println(department);
+		}
+	}
 
+	private static String reverseWord(String str) {
+		str = str.trim();
+		str = str.replaceAll("\\s", " ");
+		String[] words = str.split(" ");
+		str = "";
+		for (int i = words.length - 1; i >= 0; i--) {
+			str += words[i] + " ";
+		}
+		return str.substring(0, str.length() - 2);
 	}
 
 //	Question 6: Khởi tạo 1 array phòng ban gồm 5 phòng ban, sau đó in ra danh
@@ -69,7 +160,46 @@ public class Exercise5_ObjectMethod {
 //	Sale
 //	Waiting room
 	private static void question6() {
-		// TODO Auto-generated method stub
+		Department[] departments = new Department[5];
+		Department department1 = new Department();
+		department1.departmentID = 1;
+		department1.departmentName = "Sale";
+		Department department2 = new Department();
+		department2.departmentID = 2;
+		department2.departmentName = "Marketing";
+		Department department3 = new Department();
+		department3.departmentID = 3;
+		department3.departmentName = "Boss of director";
+		Department department4 = new Department();
+		department4.departmentID = 4;
+		department4.departmentName = "Waiting room";
+		Department department5 = new Department();
+		department5.departmentID = 5;
+		department5.departmentName = "Accounting";
+		departments[0] = department1;
+		departments[1] = department2;
+		departments[2] = department3;
+		departments[3] = department4;
+		departments[4] = department5;
+		System.out.println("In ra thứ tự phòng ban theo thứ tự tăng dần theo tên");
+		// sử dụng 2 vòng for trượt đi để so sánh
+		for (int i = 0; i < departments.length; i++) {
+			for (int j = 0; j < departments.length - 1; j++) {
+				if (departments[i].departmentName.compareToIgnoreCase(departments[j].departmentName) < 0) {
+					// swap đổi chỗ 2 thằng
+					Department temp = departments[i];
+					departments[i] = departments[j];
+					departments[j] = temp;
+				}
+			}
+		}
+		printArray(departments);
+	}
+
+	private static void printArray(Department[] departments) {
+		for (Department department : departments) {
+			System.out.println(department);
+		}
 
 	}
 

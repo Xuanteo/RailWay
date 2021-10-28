@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.Comparator;
+
 /**
  * Table 1:Department DepartmentID: định danh của phòng ban (auto increment)
  * DepartmentName: tên đầy đủ của phòng ban (VD: sale, marketing, …)
@@ -7,7 +9,7 @@ package entity;
  * @author PTXUAN
  *
  */
-public class Department {
+public class Department implements Comparator<Department>{
 
 	public int departmentID;
 
@@ -38,5 +40,10 @@ public class Department {
 			return true;
 		}
 		return false;
+	}
+	// compareto so sánh 2 chuỗi theo thứ tự từ điển. chuỗi 1> chuỗi 2 trả về số dương còn không trả về số âm.
+	@Override
+	public int compare(Department o1, Department o2) {
+		return o1.departmentName.compareTo(o2.departmentName);
 	}
 }
